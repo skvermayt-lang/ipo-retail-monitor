@@ -1,5 +1,7 @@
 name: IPO verdict monitor
 on:
+  push:
+    paths: ['providers.py', 'strategy.py', 'monitor.py', '.github/workflows/monitor.yml']
   schedule:
     # UTC -> IST: 15:02, 15:12, 15:22, weekdays.
     - cron: '32,42,52 9 * * 1-5'

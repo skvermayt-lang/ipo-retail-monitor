@@ -2,7 +2,7 @@
 
 A free-to-run Python monitor for **Indian mainboard retail IPOs and listing-day gains**. It discovers issues closing today, checks final-day subscription demand against two GMP publishers, and attempts one Telegram verdict per issue.
 
-**Status:** code implemented; local unit tests and live public-data preview verified. Deployment and live Telegram delivery require a repository and your own bot secrets. No trade is placed. This is an unbacktested rules-based screen, not an investment advisory service or a guarantee of profit.
+**Status:** published to [skvermayt-lang/ipo-retail-monitor](https://github.com/skvermayt-lang/ipo-retail-monitor). All 38 tests passed locally and on GitHub Actions. Telegram activation still requires your bot secrets. No trade is placed. This is an unbacktested rules-based screen, not an investment advisory service or a guarantee of profit.
 
 ## What a verdict means
 
@@ -103,7 +103,7 @@ python -m unittest discover -s tests -v
 python monitor.py
 ```
 
-Preview is the default. It writes `report.json` locally, with source links, publisher timestamps, calculations and reasons; it never sends. An early preview is not the final-day verdict.
+Source-code pushes also run a live-data preview automatically, without sending Telegram messages. Preview is the default. It writes `report.json` locally, with source links, publisher timestamps, calculations and reasons; it never sends. An early preview is not the final-day verdict.
 
 `python monitor.py --send` delivers only in the window and requires `TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID` in the process environment. Local mode uses `local-state.json`; do not use it in parallel with GitHub. Keep this local state file to retain duplicate protection.
 
