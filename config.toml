@@ -1,0 +1,21 @@
+# All times Asia/Kolkata. Confirm your broker cutoff before enabling.
+[schedule]
+verdict_at = "15:00"
+data_retry_until = "15:20"
+send_until = "15:30"
+broker_cutoff = "16:00"
+[strategy]
+# Unbacktested heuristics for listing-day speculation.
+min_gmp_percent = 15.0
+min_qib = 5.0
+min_nii = 3.0
+min_retail = 1.0
+min_total = 3.0
+max_gmp_source_gap_pp = 5.0
+max_gmp_drop_percent = 20.0
+max_subscription_age_minutes = 30
+max_gmp_age_hours = 24
+retail_limit_rupees = 200000
+[aliases]
+# Reviewed InvestorGain name -> IPO Watch name; no fuzzy matching.
+"SFC Environmental Technologies" = "SFC Environmental"
